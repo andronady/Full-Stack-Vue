@@ -16,9 +16,9 @@ app.use('/api/posts', posts)
 if (process.env.NODE_ENV === 'production') {
     app.use(express.static(__dirname + '/public/'));
 
-    app.get(/.*/, (res, req) => res.sendFile(__dirname + 'public/index.html'))
+    app.get(/.*/, (res, req) => res.sendFile(__dirname + 'public/index.html'));
 }
 
-const port = process.env.PORT | 9000;
+const port = process.env.PORT || 9000;
 
 app.listen(port, () => console.log(`server started on porst ${port}`))
