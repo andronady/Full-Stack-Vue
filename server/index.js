@@ -40,9 +40,12 @@ app.use('/api/posts', posts)
 
 const orders = require('./routes/api/orders');
 const products = require('./routes/api/products');
+const userRoute = require('./routes/api/users');
+
 
 app.use('/api/orders', orders)
 app.use('/api/products', products)
+app.use('/api/users', userRoute)
 
 if (process.env.NODE_ENV === 'production') {
     app.use(express.static(__dirname + '/public/'));
